@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const NavAuthButtons = () => {
     return (
-        <div className='flex'>
+        <div className='md:flex '>
             <div className='flex '>
                 <div className='mx-1'>
                     <Link to={'login'}>Login</Link>
@@ -13,6 +13,9 @@ const NavAuthButtons = () => {
             </div>
             <div className='hidden'>
                 <Link to={'profile'}>Profile</Link>
+            </div>
+            <div className='hidden'>
+                <Link to={'appointment'}>My Appointment</Link>
             </div>
         </div>
     );
