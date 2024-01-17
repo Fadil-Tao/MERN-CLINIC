@@ -8,8 +8,7 @@ const userSchema = new Schema ({
     _name:{type:String,required:true},
     _email:{type:String,required:true},
     _phone:{type:Number,required:true},
-    _birth:{type:Date,required:true},
-    _address:{type:String, required:true},
+    _birth:{type:String,required:true},
     _password:{type:String},
 }, {
     versionKey:false
