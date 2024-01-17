@@ -3,15 +3,17 @@ type AuthInputType = {
     placeholder: string;
     name: string;
     type: string;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const AuthInput = ({ title, placeholder, name, type }: AuthInputType) => {
+const AuthInput = ({ title, placeholder, name, type,handleChange }: AuthInputType) => {
     return (
         <div className='grid my-3'>
             <label htmlFor={name} className=' text-green-700'>
                 {title}
             </label>
-            <input
+            <input required
+                onChange={handleChange}
                 type={type}
                 placeholder={placeholder}
                 name={name}

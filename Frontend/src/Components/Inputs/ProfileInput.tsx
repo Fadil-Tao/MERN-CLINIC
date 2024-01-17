@@ -14,7 +14,7 @@ const ProfileInput = ({
     type
 }: ProfileInputProps) => {
     return (
-        <div className='w-full grid  p-2 '>
+        <div className='w-full grid text-3xl p-2 '>
             <label htmlFor={name} className='font-semibold'>
                 {label}
             </label>
