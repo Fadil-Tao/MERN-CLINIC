@@ -15,7 +15,7 @@ const MiniCard = ({ img, name, role }: MiniCardType) => {
                 />
             </div>
             <div>
-                <p className='font-semibold text-lg'>Dr.{name}</p>
+                <p className='font-semibold text-lg'>{name}</p>
                 <p className='text-sm text-gray-700'>{role}</p>
             </div>
         </div>
