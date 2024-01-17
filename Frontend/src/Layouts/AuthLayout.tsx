@@ -1,18 +1,21 @@
 import AuthBanner from '../assets/AuthBanner.jpg';
+import { SnackbarProvider} from 'notistack';
 
 type AuthLayoutType = {
-    Form:React.ComponentType;
-}
+    Form: React.ComponentType;
+};
 
-const AuthLayout = ({Form}:AuthLayoutType) => {
+const AuthLayout = ({ Form }: AuthLayoutType) => {
     return (
         <div className='min-h-screen flex justify-center items-center flex-wrap'>
-            <div>
+            <SnackbarProvider>
                 <div>
-                    <img src={AuthBanner} alt='Image' />
+                    <div>
+                        <img src={AuthBanner} alt='Image' />
+                    </div>
                 </div>
-            </div>
-            <Form/>
+                <Form />
+            </SnackbarProvider>
         </div>
     );
 };
