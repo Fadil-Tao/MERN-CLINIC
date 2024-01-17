@@ -16,7 +16,7 @@ export const HandleLogin = async (userData: userDataType) => {
 
         if (response.ok) {
             const {
-                data: { token, _id ,_name},
+                data: { token, _id},
             } = await response.json();
             localStorage.setItem('_id', _id);
             localStorage.setItem('token', token);
