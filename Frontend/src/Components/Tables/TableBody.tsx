@@ -1,31 +1,25 @@
-import { Appointment } from '../../DummyData/DummyAppointment';
 import { CancelButton } from '../Buttons/CancelButton';
+import { useFetchAppointment } from '../../Hooks/FetchAppointment';
+import LoadingSpinner from '../Ui/LoadingSpinner';
 
-type AppointmentTableProps = {
-    no: number;
-    doctor: string;
-    appDate: string;
-    appTime: string;
-    bookDate: string;
-    bookTime: string;
-};
 
 const TableBody = () => {
-    const data: AppointmentTableProps[] = Appointment;
-
-    if (!data) return <div>No appointment Yet</div>;
+    const {data,isLoading} = useFetchAppointment();
+    
+    if (isLoading) return <LoadingSpinner/>;
+    if(!data) return <div>No data yet</div>
     return (
         <tbody>
-            {data.map((data) => {
+            {data.map((data,key) => {
                 return (
-                    <tr className='border-b-2 py-5'>
-                        <th>{data.no}</th>
-                        <th>{data.doctor}</th>
-                        <th>{data.appDate}</th>
-                        <th>{data.appTime}</th>
-                        <th>{data.bookDate}</th>
-                        <th>{data.bookTime}</th>
-                        <th><CancelButton /></th>
+                    <tr key={key} className='border-b-2 py-5'>
+                        <th>{key + 1}</th>
+                        <th>{data._doctor}</th>
+                        <th>{data._appDate}</th>
+                        <th>{data._appTime}</th>
+                        <th>{data._bookDate}</th>
+                        <th>{data._bookTime}</th>
+                        <th><CancelButton _id={data._id} /></th>
                     </tr>
                 );
             })}

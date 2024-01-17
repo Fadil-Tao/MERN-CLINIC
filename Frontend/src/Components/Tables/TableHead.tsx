@@ -6,9 +6,9 @@ const TableHead = () => {
     return (
         <thead>
             <tr className=" bg-green-500 text-white text-center">
-                {thList.map((data)=> {
+                {thList.map((data,key)=> {
                     return (
-                        <th className="p-2">{data}</th>
+                        <th key={key} className="p-2">{data}</th>
                     )
                 })}
             </tr>
