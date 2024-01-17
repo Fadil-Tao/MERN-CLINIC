@@ -1,22 +1,16 @@
-import { Link } from 'react-router-dom';
+import { AuthFunc } from '../../Store/auth';
+import LoggedInNav from './LoggedInNav';
+import EntryNav from './EntryNav';
+import { useEffect } from 'react';
 
 const NavAuthButtons = () => {
+    const {isLoggedIn} = AuthFunc();
+    useEffect(()=> {
+        console.log(isLoggedIn)
+    }, [])
     return (
-        <div className='md:flex '>
-            <div className='flex '>
-                <div className='mx-1'>
-                    <Link to={'login'}>Login</Link>
-                </div>
-                <div className='mx-1'>
-                    <Link to={'register'}>Register</Link>{' '}
-                </div>
-            </div>
-            <div className='hidden'>
-                <Link to={'profile'}>Profile</Link>
-            </div>
-            <div className='hidden'>
-                <Link to={'appointment'}>My Appointment</Link>
-            </div>
+        <div className='md:flex text-green-700 font-semibold text-2xl '>
+            {isLoggedIn? <LoggedInNav/> : <EntryNav/>}
         </div>
     );
 };
