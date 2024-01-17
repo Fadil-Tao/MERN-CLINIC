@@ -12,16 +12,19 @@ const time = new Date().toLocaleTimeString("en-GB", {
   minute: "2-digit",
 });
 
-const appointmentSchema = new Schema({
-    _id:{type:objectId,auto:true,},
-  _doctor: { type: String, required: true },
-  _appDate: { type: String, required: true },
-  _appTime: { type: String, required: true },
-  _bookDate: { type: String, default: date, auto:true },
-  _bookTime: { type: String, default: time , auto:true},
-  _patient:{type:objectId, ref:'users'}
-}, {
-    versionKey:false
-});
-const appointment = mongoose.model('appointment',appointmentSchema)
+const appointmentSchema = new Schema(
+  {
+    _id: { type: objectId, auto: true },
+    _doctor: { type: String, required: true },
+    _appDate: { type: String, required: true },
+    _appTime: { type: String, required: true },
+    _bookDate: { type: String, default: date, auto: true },
+    _bookTime: { type: String, default: time, auto: true },
+    _name: { type: objectId, ref: "users" },
+  },
+  {
+    versionKey: false,
+  }
+);
+const appointment = mongoose.model("appointment", appointmentSchema);
 module.exports = appointment;
