@@ -4,21 +4,38 @@ import { useForm } from '../../Hooks/FormUtils.hook';
 import { HandleLogin } from '../../Services/Login';
 import { useRedirecting } from '../../Hooks/Redirecting.hook';
 import { AuthFunc } from '../../Store/auth';
+import { useSnackbar } from 'notistack';
 
 const FormLogin = () => {
     const { statusLog } = AuthFunc();
-
+    const { enqueueSnackbar } = useSnackbar();
     const redirect = useRedirecting('/home');
     const { formData, handleChange, handleSubmit } = useForm({
         _email: '',
         _password: '',
     });
-    
+
     const loginProc = async () => {
-        (await HandleLogin(formData)) && statusLog(true);
-        redirect();
+        HandleLogin(formData)
+            .then((loginStatus) => {
+                console.log(loginStatus);
+                enqueueSnackbar('Succesfully login', {
+                    variant: 'success',
+                    autoHideDuration: 3000,
+                });
+                statusLog(true)
+                loginStatus && redirect();
+            })
+            .catch((error) => {
+                console.log(error)
+                enqueueSnackbar(error, {
+                    variant: 'warning',
+                    autoHideDuration: 3000,
+                });
+                console.error(error);
+            });
     };
-    
+
     return (
         <div className='border-2 shadow-xl border-green-700 p-12 rounded-md '>
             <div className='grid grid-cols-1 '>
