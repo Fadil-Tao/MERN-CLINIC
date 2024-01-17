@@ -54,10 +54,10 @@ class BaseController {
         return this.internalServerError(res, err);
       });
   };
-  add = (req, res) => {
+  addUser = (req, res) => {
     const body = req.body;
     this.repo
-      .create(body)
+      .createUser(body)
       .then((doc) => {
         return this.created(res, doc);
       })
@@ -65,6 +65,17 @@ class BaseController {
         return this.internalServerError(res, err);
       });
   };
+  addAppointment = (req,res) => {
+    const body = req.body;
+    this.repo
+      .createAppointment(body)
+      .then((doc) => {
+        return this.created(res, doc);
+      })
+      .catch((err) => {
+        return this.internalServerError(res, err);
+      });
+  } 
   update = (req, res) => {
     let id = req.params.id;
     const body = req.body;
@@ -99,6 +110,17 @@ class BaseController {
         return this.internalServerError(res, err);
       });
   };
+  getByName = (req, res) => {
+    let name = req.params.id;
+    this.repo
+      .findByName(name)
+      .then((doc) => {
+        return this.ok(res, doc);
+      })
+      .catch((err) => {
+        return this.internalServerError(res, err);
+      });
+  };
   loginUser = async (req, res) => {
     try {
       const body = req.body;
@@ -121,10 +143,9 @@ class BaseController {
           _address: user._address,
         },
         process.env.JWT_SECRET,
-        {expiresIn:"1h"}
+        {expiresIn:"2d"}
       );
-
-      return this.ok(res, { _id: user._id, token });
+      return this.ok(res, { _id: user._id, token});
     } catch (error) {
       this.internalServerError(res, error);
     }
