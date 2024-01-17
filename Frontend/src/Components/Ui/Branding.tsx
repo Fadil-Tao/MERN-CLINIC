@@ -55,7 +55,7 @@ const Branding = () => {
                 <div className=' md:w-full ml-10 border-dashed border-2 border-white rounded-md bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 '>
                     <div className='w-full h-full bg-white p-1'>
                         <img
-                            src='https://placekitten.com/408/287'
+                            src='https://michiganchronicle.com/wp-content/uploads/sites/2/2015/08/doctor-explaining-prescription-to-patient.jpg'
                             alt=''
                             className='w-full h-full object-cover rounded-md '
                         />

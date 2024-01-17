@@ -3,7 +3,7 @@ import BookLink from '../Buttons/BooksLink';
 
 const HeroBanner = () => {
     return (
-        <div className='bg-[#b1e4c8] w-full md:px-20 px-12  flex md:py-28 flex-wrap-reverse py-4'>
+        <div className='bg-[#b1e4c8] w-full md:px-20 px-12  flex md:py-20 flex-wrap-reverse py-4'>
             <div className='md:w-1/2 md:pr-4'>
                 <p className=' text-gray-700 text-lg flex justify-start items-center'>
                     <FaHeart style={{ color: 'red' }} /> Love Your Smile
@@ -12,10 +12,11 @@ const HeroBanner = () => {
                     Find Your Doctor and Take an Appointments
                 </h2>
                 <p className='my-5 '>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dignissimos ullam repellendus dolorum ea magni harum,
-                    mollitia optio aperiam ipsa. Voluptas ex minus culpa atque
-                    doloribus quis magnam nihil aspernatur molestiae.
+                    Welcome to our comprehensive doctor appointment platform,
+                    where we connect patients with trusted healthcare
+                    professionals. Seamlessly schedule appointments, explore
+                    specialized doctors, and prioritize your well-being with our
+                    user-friendly and efficient online service.
                 </p>
                 <div className='my-10 flex justify-center items-center w-full'>
                     <BookLink />
@@ -42,10 +43,10 @@ const HeroBanner = () => {
                     </div>
                 </div>
             </div>
-            <div className='md:w-1/2'>
+            <div className='md:w-1/2 md:h-96 inset-8 rounded-full bg-teal-400'>
                 <img
-                    src='https://placekitten.com/408/287'
-                    className=' object-cover w-full h-full rounded-lg'
+                    src='https://png.pngtree.com/png-clipart/20230918/ourmid/pngtree-photo-men-doctor-physician-chest-smiling-png-image_10132895.png'
+                    className=' object-contain w-full h-full rounded-lg'
                     alt=''
                 />
             </div>

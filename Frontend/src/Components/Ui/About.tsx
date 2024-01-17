@@ -18,7 +18,7 @@ const About = () => {
                 <div className='h-[250px] md:w-full mr-10 border-dashed border-2 border-white rounded-md bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 '>
                     <div className='w-full h-full bg-white p-1'>
                         <img
-                            src='https://placekitten.com/408/287'
+                            src='https://i.pinimg.com/originals/61/b8/f6/61b8f6e014116aca1db6f85be6485203.png'
                             alt=''
                             className='w-full h-full object-cover rounded-md '
                         />

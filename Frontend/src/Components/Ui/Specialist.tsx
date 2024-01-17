@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import MiniCard from '../Cards/MiniCard';
 import useIsVisible from '../../Hooks/ScrollEffect.hook';
-
+import DummyDoctorList from '../../DummyData/DummyDoctorList';
 const Specialists = () => {
     const ref = useRef<HTMLDivElement>(null);
     const isVisible = useIsVisible(ref);
@@ -26,34 +26,11 @@ const Specialists = () => {
             </div>
             <div>
                 <ul className='flex flex-wrap justify-center items-center'>
-                    <li>
-                        <MiniCard
-                            img='https://placekitten.com/408/287'
-                            name='Khalid Khasmiri'
-                            role='Dentist'
-                        />
-                    </li>
-                    <li>
-                        <MiniCard
-                            img='https://placekitten.com/408/287'
-                            name='Khalid Khasmiri'
-                            role='Dentist'
-                        />
-                    </li>
-                    <li>
-                        <MiniCard
-                            img='https://placekitten.com/408/287'
-                            name='Khalid Khasmiri'
-                            role='Dentist'
-                        />
-                    </li>
-                    <li>
-                        <MiniCard
-                            img='https://placekitten.com/408/287'
-                            name='Khalid Khasmiri'
-                            role='Dentist'
-                        />
-                    </li>
+                    {DummyDoctorList.map((data,key)=> {
+                        return <li key={key}>
+                            <MiniCard img={data.img} name={data.name} role={data.speciality}/>
+                        </li>
+                    })}
                 </ul>
             </div>
         </div>
