@@ -12,6 +12,7 @@
     "dependencies": {
         "@material-tailwind/react": "^2.1.8",
         "axios": "^1.6.5",
+        "dotenv": "^16.3.1",
         "eslint-config-airbnb-typescript": "^17.1.0",
         "localforage": "^1.10.0",
         "match-sorter": "^6.3.1",
