@@ -3,9 +3,9 @@ const cors = require('cors');
 // environment variable 
 require('dotenv').config()
 // import db 
-require('./Config/db')
+require('..db/Config/db')
 
-const apiRoutes = require('./Routes/api.routes');
+const apiRoutes = require('../Routes/api.routes');
 const app = express();
 
 // Middlewares
