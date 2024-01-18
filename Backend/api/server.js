@@ -25,3 +25,8 @@ app.listen(port,() => {
     console.log(`Server is Running on ${port}`)
 })
 
+export default function handler(request, response) {
+  const { name = 'World' } = request.query;
+  return response.send(`Hello ${name}!`);
+}
+
