@@ -7,6 +7,7 @@ require('..db/Config/db')
 
 const apiRoutes = require('../Routes/api.routes');
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Middlewares
 app.use(
@@ -19,8 +20,11 @@ app.use(express.json())
 // api route
 app.use('/api',apiRoutes)
 
-const port = process.env.PORT || 3000;
 
 app.listen(port,() => {
     console.log(`Server is Running on ${port}`)
+})
+
+app.get('/', (req,res) => {
+  res.send("Working fine")
 })
