@@ -10,7 +10,7 @@ const name = localStorage.getItem('_id')
 export const handleAppointment = async (appointmentData: AppointmentType) => {
 
     try {
-        const response = await fetch(`${baseUrl}/add`, {
+        const response = await fetch(`${baseUrl}appointment/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export const handleAppointment = async (appointmentData: AppointmentType) => {
 
 export const getAppointmentData = async() => {
     try {
-        const response = await fetch(`${baseUrl}getByName/${name}`, {
+        const response = await fetch(`${baseUrl}appointment/getByName/${name}`, {
             method:'GET',
             headers:{
                 Authorization:`Bearer ${token}`
@@ -55,7 +55,7 @@ export const getAppointmentData = async() => {
 
 export const deleteAppointmentData = async (id:string) => {
     try {
-        const response = await fetch(`${baseUrl}delete/${id}`, {
+        const response = await fetch(`${baseUrl}appointment/delete/${id}`, {
             method:'DELETE',
             headers:{
                 Authorization: `Bearer ${token}`
