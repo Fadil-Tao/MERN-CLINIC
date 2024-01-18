@@ -3,7 +3,7 @@ type AppointmentType = {
     _appDate:string,
     _appTime:String,
 }
-const baseUrl = 'http://localhost:8000/api/appointment';
+const baseUrl = import.meta.env.VITE_BASE_URL_KEY
 const token = localStorage.getItem('token') || '';
 const name = localStorage.getItem('_id')
 
@@ -35,7 +35,7 @@ export const handleAppointment = async (appointmentData: AppointmentType) => {
 
 export const getAppointmentData = async() => {
     try {
-        const response = await fetch(`${baseUrl}/getByName/${name}`, {
+        const response = await fetch(`${baseUrl}getByName/${name}`, {
             method:'GET',
             headers:{
                 Authorization:`Bearer ${token}`
@@ -55,7 +55,7 @@ export const getAppointmentData = async() => {
 
 export const deleteAppointmentData = async (id:string) => {
     try {
-        const response = await fetch(`${baseUrl}/delete/${id}`, {
+        const response = await fetch(`${baseUrl}delete/${id}`, {
             method:'DELETE',
             headers:{
                 Authorization: `Bearer ${token}`

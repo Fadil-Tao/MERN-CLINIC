@@ -3,8 +3,12 @@ type userDataType = {
     _password: string;
 };
 
+const baseUrl = import.meta.env.VITE_BASE_URL_KEY
+
+
 export const HandleLogin = async (userData: userDataType) => {
-    const response = await fetch('http://localhost:8000/api/users/login', {
+    console.log(baseUrl)
+    const response = await fetch(`${baseUrl}users/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

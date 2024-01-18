@@ -7,8 +7,9 @@ export interface userDataInterFace {
     _password:string,
 }
 
+const baseUrl = import.meta.env.VITE_BASE_URL_KEY
+
 export const FetchProfile = async() => {
-    const baseUrl:string = 'http://localhost:8000/api/users/getById'
     const { token = '', _id = '' } = localStorage;
     try {
         const response = await fetch(`${baseUrl}/${_id}`, {
