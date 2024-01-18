@@ -3,7 +3,7 @@ type AppointmentType = {
     _appDate:string,
     _appTime:String,
 }
-const baseUrl = import.meta.env.VITE_BASE_URL_KEY
+const baseUrl = import.meta.env.VITE_API_KEY
 const token = localStorage.getItem('token') || '';
 const name = localStorage.getItem('_id')
 

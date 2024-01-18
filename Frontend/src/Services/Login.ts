@@ -3,7 +3,7 @@ type userDataType = {
     _password: string;
 };
 
-const baseUrl = import.meta.env.VITE_BASE_URL_KEY
+const baseUrl = import.meta.env.VITE_API_KEY
 
 
 export const HandleLogin = async (userData: userDataType) => {

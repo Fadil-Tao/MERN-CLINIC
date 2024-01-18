@@ -7,7 +7,7 @@ export type userDataType= {
     _password:string,
 }
 
-const baseUrl = import.meta.env.VITE_BASE_URL_KEY
+const baseUrl = import.meta.env.VITE_API_KEY
 const Register = async(userData:userDataType) => {
    const response = await fetch (`${baseUrl}users/register`, {
     method:'POST',

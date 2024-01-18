@@ -7,7 +7,7 @@ export interface userDataInterFace {
     _password:string,
 }
 
-const baseUrl = import.meta.env.VITE_BASE_URL_KEY
+const baseUrl = import.meta.env.VITE_API_KEY
 
 export const FetchProfile = async() => {
     const { token = '', _id = '' } = localStorage;
