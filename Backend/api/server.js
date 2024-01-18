@@ -25,6 +25,3 @@ app.listen(port,() => {
     console.log(`Server is Running on ${port}`)
 })
 
-app.get('/', (req,res) => {
-  res.send("Working fine")
-})
